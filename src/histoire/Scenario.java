@@ -27,8 +27,7 @@ public class Scenario {
 		village.afficherVillageois();
 
 		System.out.println(village.installerVendeur(bonemine, "fleurs", 20));
-		System.out
-				.println(village.installerVendeur(assurancetourix, "lyres", 5));
+		System.out .println(village.installerVendeur(assurancetourix, "lyres", 5));
 		System.out.println(village.installerVendeur(obelix, "menhirs", 2));
 		System.out.println(village.installerVendeur(druide, "fleurs", 10));
 
@@ -39,6 +38,20 @@ public class Scenario {
 		System.out.println(etalFleur.acheterProduit(15, assurancetourix));
 		System.out.println(village.partirVendeur(bonemine));
 		System.out.println(village.afficherMarche());
+		
+		try	{
+			System.out.println(etalFleur.acheterProduit(-2, abraracourcix));
+		} catch(IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		
+		try	{
+			etalFleur.libererEtal();
+			System.out.println(etalFleur.acheterProduit(2, abraracourcix));
+		} catch(IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
